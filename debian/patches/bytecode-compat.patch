@@ -1,0 +1,32 @@
+Description: Build backwards compatible bytecode.
+ By default, javac compiles bytecode which is compatible
+ with the Java implementation the JDK originates from and
+ onwards.
+ .
+ This patch ensures that bytecode is compatible with Java
+ 1.5 and up.
+Author: James Page <james.page@ubuntu.com>
+Bug-Ubuntu: https://bugs.launchpad.net/ubuntu/+source/erlang/+bug/1049769
+
+--- a/lib/ic/java_src/com/ericsson/otp/ic/Makefile
++++ b/lib/ic/java_src/com/ericsson/otp/ic/Makefile
+@@ -91,7 +91,7 @@ ifneq ($(V),0)
+ JARFLAGS= -cfv
+ endif
+ 
+-JAVA_OPTIONS = 
++JAVA_OPTIONS = -source 1.5 -target 1.5
+ 
+ # ----------------------------------------------------
+ # Make Rules
+--- a/lib/jinterface/java_src/com/ericsson/otp/erlang/Makefile
++++ b/lib/jinterface/java_src/com/ericsson/otp/erlang/Makefile
+@@ -79,7 +79,7 @@ ifneq ($(V),0)
+ JARFLAGS=-cfv
+ endif
+ 
+-JAVA_OPTIONS = -Xlint 
++JAVA_OPTIONS = -Xlint -source 1.5 -target 1.5
+ 
+ ifeq ($(TESTROOT),)
+ RELEASE_PATH="$(ERL_TOP)/release/$(TARGET)"
