@@ -1,3 +1,9 @@
+erlang (1:18.3-dfsg-1ubuntu3bb1) xenial; urgency=medium
+
+  * Balabit patched version
+
+ -- Balabit Platform Team <devnull@dev.null>  Mon, 12 Jun 2017 12:01:47 +0200
+
 erlang (1:18.3-dfsg-1ubuntu3) xenial; urgency=medium
 
   * Drop erlang-wx from the Recommends: of erlang-examples, so that this
