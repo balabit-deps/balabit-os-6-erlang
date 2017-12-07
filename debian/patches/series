@@ -15,3 +15,5 @@ x32.patch
 # Ubuntu patches
 fix-pointer-converstion.patch
 bytecode-compat.patch
+CVE-2016-10253.patch
+CVE-2017-1000385.patch

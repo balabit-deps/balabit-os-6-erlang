@@ -1,3 +1,17 @@
+erlang (1:18.3-dfsg-1ubuntu3.1) xenial-security; urgency=medium
+
+  * SECURITY UPDATE: heap overflow in PCRE
+    - debian/patches/CVE-2016-10253.patch: add mutual recursion detection
+      to erts/emulator/pcre/pcre_compile.c.
+    - CVE-2016-10253
+  * SECURITY UPDATE: Adaptive Chosen Ciphertext attack in TLS server
+    - debian/patches/CVE-2017-1000385.patch: add countermeasurements for
+      Bleichenbacher attack in lib/ssl/src/ssl_connection.erl,
+      lib/ssl/src/ssl_connection.hrl, lib/ssl/src/tls_connection.erl.
+    - CVE-2017-1000385
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Thu, 07 Dec 2017 08:07:14 -0500
+
 erlang (1:18.3-dfsg-1ubuntu3) xenial; urgency=medium
 
   * Drop erlang-wx from the Recommends: of erlang-examples, so that this
